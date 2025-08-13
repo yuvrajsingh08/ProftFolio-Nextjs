@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* Modern violet-purple combo */
+  --color-primary: #7C3AED; /* Vivid violet */
+  --color-secondary: #A855F7; /* Soft purple accent */
+  --color-dark: #1E1B4B; /* Deep indigo background for dark mode */
+  --color-light: #FAF5FF; /* Light lavender for backgrounds */
+  --color-text: #111827; /* Almost-black text */
+  --color-bg: #ffffff;
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animation-fade-in: fadeIn 0.5s ease-in-out;
+  --animation-slide-up: slideUp 0.5s ease-in-out;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+a {
+  transition: all 0.2s ease;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  /* Updated buttons with violet tones */
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-purple-700;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-purple-600;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-8 text-center;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
