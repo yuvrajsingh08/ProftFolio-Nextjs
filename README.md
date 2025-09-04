@@ -1,73 +1,69 @@
-# Devfolio
+# ProftFolio
 
-Devfolio is a portfolio website built using Next.js, Tailwind CSS, and Framer Motion. It allows developers to showcase their projects, skills, and blogs in a visually appealing manner.
+Welcome to **ProftFolio** – a modern, customizable portfolio built using Next.js! Showcase your skills, projects, and experience with a sleek, responsive design.
 
-## Table of Contents
+![ProftFolio Banner](./public/banner.png)
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Animations](#animations)
-- [Components](#components)
-- [Types](#types)
-- [Contributing](#contributing)
-- [License](#license)
+---
 
-## Features
+## 🚀 Features
 
-- Responsive design using Tailwind CSS
-- Smooth animations with Framer Motion
-- Dark mode support
-- Modular and reusable components
-- Easy to customize
+- **Built with Next.js** for optimal performance & SEO
+- **Responsive Design** – looks great on any device
+- **Easy Customization** – update your info in config files
+- **Project Showcase** – add, edit, and feature your best work
+- **Contact Section** – get in touch with potential employers or collaborators
+- **Dark/Light Mode** (if implemented)
+- **Animated UI** with modern CSS
 
-## Installation
+---
 
-To get started with Devfolio, follow these steps:
+## 🖼️ Preview
 
-1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/yourusername/devfolio.git
-   cd devfolio
-   ```
 
-2. **Install the dependencies:**
 
-   Make sure you have [Node.js](https://nodejs.org/) installed. Then, run the following command to install the necessary packages:
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/29d77eb0-079c-42f6-a117-fa5f0f9856c9" alt="Home Page" width="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/22d990c9-8382-452b-8864-6bd89d9c85a4" alt="Projects Section" width="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/490d588e-f9fd-4b0f-99a8-786b8db63295" alt="Contact Section" width="300"/></td>
+  </tr>
+</table>
 
-   ```bash
-   npm install
-   ```
+---
 
-3. **Run the development server:**
+## 🛠️ Getting Started
 
-   Start the development server to view the project locally:
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/yuvrajsingh08/ProftFolio-Nextjs.git
+    cd ProftFolio-Nextjs
+    ```
 
-   ```bash
-   npm run dev
-   ```
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-   Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+3. **Run the development server**
+    ```bash
+    npm run dev
+    ```
+    Visit [http://localhost:3000](http://localhost:3000) to view your portfolio.
 
-4. **Build for production:**
+---
 
-   To create an optimized production build, run:
+## 📧 Contact
 
-   ```bash
-   npm run build
-   ```
+Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/yuvrajsingh08) or [email](mailto:youremail@example.com).
 
-5. **Start the production server:**
+---
 
-   After building the project, you can start the production server with:
+## ⭐️ Show your support
 
-   ```bash
-   npm start
-   ```
+If you like this project, please star the repo!
 
-## Usage
-The Devfolio project is structured to be intuitive and easy to navigate.
+---
 
-By understanding the structure and components of Devfolio, you can easily customize and extend the project to fit your needs.
-
+**Happy Building! 🚀**
