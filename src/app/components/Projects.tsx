@@ -1,109 +1,127 @@
-'use client'
+"use client";
 
-import { projects } from '@/contents/projects'
-import Image from 'next/image'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import { motion } from 'framer-motion'
-import { fadeInUp, staggerContainer, cardHoverSmall } from '@/utils/animations'
+import { projects } from "@/contents/projects";
+import Image from "next/image";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/utils/animations";
 
 export default function Projects() {
   return (
-    <section className="py-20">
-      <div className="container max-w-7xl mx-auto px-4">
-        <motion.h2 
-          className="text-3xl font-bold mb-12 text-center"
+    <section className="relative py-24">
+      {/* Background Glow */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-primary/10 to-transparent dark:from-primary/20 blur-3xl" />
+
+      <div className="container max-w-7xl mx-auto px-6">
+        <motion.h2
+          className="text-center text-4xl md:text-5xl font-extrabold tracking-tight mb-16"
           {...fadeInUp}
         >
-          Featured Projects
+          Featured <span className="text-primary">Projects</span>
         </motion.h2>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
         >
           {projects.map((project) => (
-            <motion.article
+            <motion.div
               key={project.title}
-              className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
               variants={fadeInUp}
-              {...cardHoverSmall}
+              whileHover={{
+                rotateX: 6,
+                rotateY: -6,
+                scale: 1.04,
+                transition: { type: "spring", stiffness: 140, damping: 12 },
+              }}
+              className="bg-white dark:bg-[#111418] backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200 dark:border-[#2a2f37] overflow-hidden cursor-pointer transition-all"
+              style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
             >
-              <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+              {/* Image Section */}
+              <div className="relative aspect-video overflow-hidden group">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-dark/30 text-gray-500 text-sm">
+                    No Image Available
+                  </div>
+                )}
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-all backdrop-blur-sm"></div>
               </div>
-              <motion.h3 
-                className="text-xl font-semibold mb-2"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {project.title}
-              </motion.h3>
-              <motion.p 
-                className="text-gray-600 dark:text-gray-300 mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                {project.description}
-              </motion.p>
-              <motion.div 
-                className="flex flex-wrap gap-2 mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                {project.technologies.map((tech) => (
-                  <motion.span
-                    key={tech}
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </motion.div>
-              <motion.div 
-                className="flex gap-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <motion.a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.95 }}
+
+              {/* Details */}
+              <div className="p-6 space-y-4">
+                <motion.h3
+                  className="text-xl font-bold dark:text-gray-100"
+                  whileHover={{ x: 6 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <FaGithub className="h-5 w-5" />
-                  <span>Code</span>
-                </motion.a>
-                <motion.a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaExternalLinkAlt className="h-5 w-5" />
-                  <span>Live Demo</span>
-                </motion.a>
-              </motion.div>
-            </motion.article>
+                  {project.title}
+                </motion.h3>
+
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-6 pt-2">
+                  {project.githubLink && (
+                    <motion.a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FaGithub className="h-5 w-5" />
+                      <span className="font-medium">Code</span>
+                    </motion.a>
+                  )}
+
+                  {project.demoLink ? (
+                    <motion.a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FaExternalLinkAlt className="h-5 w-5" />
+                      <span className="font-medium">Live Demo</span>
+                    </motion.a>
+                  ) : (
+                    <span className="text-gray-400 text-sm">No Demo</span>
+                  )}
+                </div>
+              </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
-  )
-} 
+  );
+}

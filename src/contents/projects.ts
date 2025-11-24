@@ -26,12 +26,28 @@ export const projects: Project[] = [
         demoLink: 'https://admin-dashboard-flax-two.vercel.app',
         image: '/projects/admin-dashboard.png',
       },
+      // {
+      //   title: 'Weather App',
+      //   description: 'A weather application that provides real-time weather updates.',
+      //   technologies: ['JavaScript', 'OpenWeatherMap API'],
+      //   demoLink: 'https://yuvrajsingh08.github.io/Weather-App/',
+      //   githubLink: 'https://github.com/yuvrajsingh08/Weather-App',
+      //   image: '/projects/weather-app.png',
+      // },
       {
-        title: 'Weather App',
-        description: 'A weather application that provides real-time weather updates.',
-        technologies: ['JavaScript', 'OpenWeatherMap API'],
-        demoLink: 'https://yuvrajsingh08.github.io/Weather-App/',
-        githubLink: 'https://github.com/yuvrajsingh08/Weather-App',
-        image: '/projects/weather-app.png',
+        title: 'SecureShare (VanishShare)',
+        description: 'A secure, encrypted file-sharing backend that generates temporary expiring download links with full data protection.',
+        technologies: [
+          'Node.js',
+          'Express.js',
+          'MongoDB',
+          'Redis',
+          'Supabase Storage',
+          'JWT',
+          'AES-256 Encryption',
+          'Multer'
+        ],
+        githubLink: 'https://github.com/yuvrajsingh08/SecureShare',
       },
+
   ];
