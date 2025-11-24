@@ -15,7 +15,7 @@ export default function AboutMe() {
           LET ME <span className="text-primary">INTRODUCE</span> MYSELF
         </motion.h2>
 
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between  gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between  gap-12">
 
           {/* Left content */}
            <motion.div
@@ -25,7 +25,7 @@ export default function AboutMe() {
           >
             <div className="absolute w-72 h-72 bg-primary/20 rounded-full blur-3xl -z-10"></div>
             <Image
-              src="/developer.png"
+              src="/dev2.png"
               alt="Yuvraj Singh Avatar"
               width={300}
               height={300}

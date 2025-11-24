@@ -10,9 +10,9 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-6 sm:px-8 py-20 md:py-28 lg:py-32 flex flex-col-reverse lg:flex-row items-center gap-12">
-        
+
         {/* Left Section */}
-        <motion.div 
+        <motion.div
           className="flex-1 text-center lg:text-left"
           {...fadeInUp}
           transition={{ delay: 0.2 }}
@@ -70,19 +70,19 @@ export default function Hero() {
         </motion.div>
 
         {/* Right Section - Profile */}
-        <motion.div 
+        <motion.div
           className="flex-1 flex justify-center relative"
           {...scaleIn}
           transition={{ delay: 0.4 }}
         >
           {/* Background Glow */}
           <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-primary/30 rounded-full blur-3xl -z-10"></div>
-          <Image 
-            src="/profile.avif" 
-            alt="Profile" 
-            width={250} 
-            height={250} 
-            className="rounded-full w-40 sm:w-56 md:w-64 object-cover ring-4 ring-primary/50 shadow-xl" 
+          <Image
+            src="/developer.png"
+            alt="Profile"
+            width={300}
+            height={300}
+            className="rounded-full w-40 sm:w-56 md:w-64 scale-150 object-cover ring-4 ring-primary/50 shadow-xl"
           />
         </motion.div>
 
