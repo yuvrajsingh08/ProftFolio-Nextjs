@@ -2,53 +2,74 @@
 
 import { education } from '@/contents/education'
 import { motion } from 'framer-motion'
-import { fadeInUp, staggerContainer, cardHoverSmall } from '@/utils/animations'
+import { fadeInUp, staggerContainer } from '@/utils/animations'
 
 export default function Education() {
   return (
-    <section className="py-20">
-      <div className="container max-w-5xl mx-auto px-4">
-        <motion.h2 
-          className="text-3xl font-bold mb-12 text-center"
+    <section className="py-24 relative">
+
+      <div className="container max-w-5xl mx-auto px-6">
+        <motion.h2
           {...fadeInUp}
+          className="text-center text-4xl md:text-5xl font-extrabold tracking-wider mb-20"
         >
-          Education
+          EDUCATION
         </motion.h2>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           animate="animate"
+          className="relative border-l-4 border-primary/40 pl-6 space-y-14"
         >
-          {education.map((edu, idx) => (
-            <motion.article
-              key={idx}
-              className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
+          {education.map((edu, i) => (
+            <motion.div
+              key={i}
               variants={fadeInUp}
-              {...cardHoverSmall}
+              whileHover={{
+                rotateX: 8,
+                rotateY: -8,
+                scale: 1.03,
+                transition: { type: "spring", stiffness: 120, damping: 10 }
+              }}
+              className="relative group cursor-pointer"
+              style={{ perspective: "1200px" }}
             >
-              <motion.h3 
-                className="text-xl font-semibold mb-1"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
+              {/* Timeline Dot */}
+              <div className="absolute w-6 h-6 -left-[1.95rem] top-1/2 -translate-y-1/2 rounded-full bg-primary border-[3px] border-white dark:border-[#111418] shadow-xl group-hover:scale-125 transition-transform" />
+
+              {/* Card */}
+              <div
+                className="bg-white dark:bg-[#111418] backdrop-blur-lg rounded-xl p-6 md:p-8 shadow-2xl border border-gray-200
+                dark:border-[#2a2f37] group-hover:border-primary/60 transition-all duration-300"
+                style={{ transformStyle: "preserve-3d" }}
               >
-                {edu.degree}
-              </motion.h3>
-              <p className="text-primary font-medium mb-1">{edu.school}</p>
-              <div className="flex justify-between items-center mb-2">
-                <p className="text-gray-500 dark:text-gray-400 text-sm">{edu.year}</p>
-                <p className="text-sm font-medium text-secondary">{edu.gpa}</p>
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
+                  <motion.h3
+                    whileHover={{ x: 6 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="text-xl md:text-2xl font-bold dark:text-gray-100"
+                  >
+                    {edu.degree}
+                  </motion.h3>
+
+                  <span className="text-sm px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold border border-primary/30">
+                    {edu.year}
+                  </span>
+                </div>
+
+                <p className="text-primary font-semibold text-lg mb-2">{edu.school}</p>
+
+                <div className="flex justify-between items-center mb-3">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">CGPA</p>
+                  <p className="text-md font-bold text-secondary">{edu.gpa}</p>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {edu.description}
+                </p>
               </div>
-              <motion.p 
-                className="text-gray-600 dark:text-gray-300"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                {edu.description}
-              </motion.p>
-            </motion.article>
+            </motion.div>
           ))}
         </motion.div>
       </div>
