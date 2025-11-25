@@ -9,9 +9,6 @@ import { fadeInUp, staggerContainer } from "@/utils/animations";
 export default function Projects() {
   return (
     <section className="relative py-24">
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-primary/10 to-transparent dark:from-primary/20 blur-3xl" />
-
       <div className="container max-w-7xl mx-auto px-6">
         <motion.h2
           className="text-center text-4xl md:text-5xl font-extrabold tracking-tight mb-16"
