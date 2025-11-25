@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   /* Modern violet-purple combo */
-  --color-primary: #7C3AED; /* Vivid violet */
-  --color-secondary: #A855F7; /* Soft purple accent */
-  --color-dark: #1E1B4B; /* Deep indigo background for dark mode */
-  --color-light: #FAF5FF; /* Light lavender for backgrounds */
+  --color-primary: #7c3aed; /* Vivid violet */
+  --color-secondary: #a855f7; /* Soft purple accent */
+  --color-dark: #1e1b4b; /* Deep indigo background for dark mode */
+  --color-light: #faf5ff; /* Light lavender for backgrounds */
   --color-text: #111827; /* Almost-black text */
   --color-bg: #ffffff;
 
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: "Inter", sans-serif;
 
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
@@ -45,11 +49,21 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
