@@ -74,16 +74,23 @@ export default function Hero() {
           className="flex-1 flex justify-center relative"
           {...scaleIn}
           transition={{ delay: 0.4 }}
+          whileHover={{ scale: 1.05 }}
         >
           {/* Background Glow */}
           <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-primary/30 rounded-full blur-3xl -z-10"></div>
-          <Image
-            src="/developer.png"
-            alt="Profile"
-            width={300}
-            height={300}
-            className="rounded-full w-40 sm:w-56 md:w-64 scale-150 object-cover ring-4 ring-primary/50 shadow-xl"
-          />
+           <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 4 }}
+            >
+              <Image
+                src="/developer1.png"
+                alt="Profile"
+                width={300}
+                height={300}
+                className="rounded-full w-40 sm:w-56 md:w-64 scale-150 object-cover ring-4 ring-primary/50 shadow-xl"
+              />
+            </motion.div>
+
         </motion.div>
 
       </div>
