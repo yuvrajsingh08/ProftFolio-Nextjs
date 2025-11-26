@@ -9,7 +9,7 @@ import { fadeInUp, scaleIn } from '@/utils/animations';
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="container max-w-7xl mx-auto px-6 sm:px-8 py-20 md:py-28 lg:py-32 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <div className="container max-w-7xl mx-auto px-6 sm:px-8 py-20 md:py-28 lg:py-32 flex flex-col-reverse lg:flex-row items-center lg:gap-12 gap-20">
 
         {/* Left Section */}
         <motion.div

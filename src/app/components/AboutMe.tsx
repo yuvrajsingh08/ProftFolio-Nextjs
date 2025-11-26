@@ -39,7 +39,7 @@ export default function AboutMe() {
           LET ME <span className="text-primary">INTRODUCE</span> MYSELF
         </motion.h2>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between lg:gap-12 gap-20">
           {/* IMAGE SECTION */}
           <motion.div
             variants={fadeItem}
